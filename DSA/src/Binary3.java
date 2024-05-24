@@ -1,5 +1,5 @@
 
-// search in rotated sorted array
+// search in rotated sorted array without duplicate elements
 
 public class Binary3 {
     public static int search(int[] nums, int target) {
