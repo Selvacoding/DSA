@@ -6,6 +6,12 @@ public class Binary5 {
         while (low <= high) {
             int mid = low + (high - low) / 2;
 
+            // there is an optimization we can do 
+            if (nums[low] <= nums[high]){
+                ans = Math.min(ans, nums[low]);
+                break;
+            }
+
             if (nums[low] <= nums[mid]) {
                 ans = Math.min(ans, nums[low]);
                 low = mid + 1;
