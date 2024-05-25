@@ -37,9 +37,37 @@ public class Binary8 {
     }
 
     public static void main(String[] args) {
-        int[] piles = {7, 15, 6, 3};
+        int[] piles = { 7, 15, 6, 3 };
         int h = 8;
         int ans = minimumRateToEatBananas(piles, h);
         System.out.println("Koko should eat at least " + ans + " bananas/hr.");
+    }
+    
+    // method -2
+    public static int minEatingSpeed(int[] piles, int h) {
+        long sum = 0;
+        for (int n : piles) {
+            sum += n;
+        }
+        
+        int l = (int) Math.ceilDiv(sum, h);
+        int r = (int) Math.ceilDiv(sum, h - piles.length + 1);
+
+        while (l < r) {
+            int m = (l + r) / 2;
+            int hours = 0;
+            for (int p : piles) {
+                hours += (p + m - 1) / m;
+                if (hours > h) {
+                    break;
+                }
+            }
+            if (hours <= h) {
+                r = m;
+            } else {
+                l = m + 1;
+            }
+        }
+        return l;
     }
 }
