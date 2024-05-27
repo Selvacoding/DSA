@@ -39,7 +39,7 @@ public class Binary8 {
     public static void main(String[] args) {
         int[] piles = { 7, 15, 6, 3 };
         int h = 8;
-        int ans = minimumRateToEatBananas(piles, h);
+        int ans = minEatingSpeed(piles, h);
         System.out.println("Koko should eat at least " + ans + " bananas/hr.");
     }
     
