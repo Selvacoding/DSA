@@ -1,14 +1,14 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
 // static window
-class HelloWorld {
+class sliding_window_patter1{
     public static void main(String[] args) {
         int a[] = {-1,2,3,4,5,-1};
         int k=4;
         int n =a.length;
         int l=0;
         int r = k-1;
-        int sum =0;
+        int sum;
         int max_sum =0;
         
         for(int i=0; i<=r;i++){
